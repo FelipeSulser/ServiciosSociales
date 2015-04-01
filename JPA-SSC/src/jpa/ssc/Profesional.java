@@ -30,9 +30,9 @@ public class Profesional implements Serializable {
 
     private String nombre;
     
+    @Column(nullable=false)
     private String apellido1;
     
-    @Column(nullable=false)
     private String apellido2;
     
     @OneToMany(mappedBy="profesional")
