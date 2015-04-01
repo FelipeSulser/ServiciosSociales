@@ -6,10 +6,12 @@
 package jpa.ssc;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
  
 /**
  *
@@ -21,6 +23,34 @@ public class Expediente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String css;
+    private String zona;
+    @OneToMany(mappedBy = "propietario")
+    private List<Vivienda> viviendas;
+    
+    public String getCss() {
+        return css;
+    }
+
+    public void setCss(String css) {
+        this.css = css;
+    }
+
+    public String getZona() {
+        return zona;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
+    }
+
+    public List<Vivienda> getViviendas() {
+        return viviendas;
+    }
+
+    public void setViviendas(List<Vivienda> viviendas) {
+        this.viviendas = viviendas;
+    }
 
     public Long getId() {
         return id;
