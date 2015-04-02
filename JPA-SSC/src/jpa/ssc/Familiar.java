@@ -5,45 +5,41 @@
  */
 package jpa.ssc;
 
-
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
-import javax.persistence.*;
-
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
- * @author felipesulser
+ * @author haritz
  */
 @Entity
-@Table(uniqueConstraints={@UniqueConstraint(columnNames={"dni"})})
-public class Ciudadano implements Serializable {
+public class Familiar implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-   
+    @Column(unique=true)
     private String dni;
-    
-    
     private String nombre;
     @Column(nullable=false)
     private String apellido1;
     private String apellido2;
-    private String nacionalidad;
-    private Date fecha_nacimiento;
-    
-    
-    @OneToMany(mappedBy="ciudadano")
-    private List<Cita> citas;
-    
-    public Ciudadano(){
+    private String parentesco;
+    private Date fechaNacimiento;
+    private double ingresoMedio;
+    @ManyToOne
+    private Expediente expediente;
+
+    public Familiar(){
         
     }
-    
     public String getDni() {
         return dni;
     }
@@ -76,22 +72,37 @@ public class Ciudadano implements Serializable {
         this.apellido2 = apellido2;
     }
 
-    public String getNacionalidad() {
-        return nacionalidad;
+    public String getParentesco() {
+        return parentesco;
     }
 
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
+    public void setParentesco(String parentesco) {
+        this.parentesco = parentesco;
     }
 
-    public Date getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
-    
+
+    public double getIngresoMedio() {
+        return ingresoMedio;
+    }
+
+    public void setIngresoMedio(double ingresoMedio) {
+        this.ingresoMedio = ingresoMedio;
+    }
+
+    public Expediente getExpediente() {
+        return expediente;
+    }
+
+    public void setExpediente(Expediente expediente) {
+        this.expediente = expediente;
+    }
     
     public Long getId() {
         return id;
@@ -111,10 +122,10 @@ public class Ciudadano implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Ciudadano)) {
+        if (!(object instanceof Familiar)) {
             return false;
         }
-        Ciudadano other = (Ciudadano) object;
+        Familiar other = (Familiar) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -123,7 +134,7 @@ public class Ciudadano implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.sercsocial.Ciudadano[ id=" + id + " ]";
+        return "jpa.ssc.Familiar[ id=" + id + " ]";
     }
     
 }

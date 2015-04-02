@@ -38,7 +38,9 @@ public class Profesional implements Serializable {
     @OneToMany(mappedBy="profesional")
     private List<Cita> citas;
     
-    
+    public Profesional(){
+        
+    }
     public void setNombre(String n){
         nombre = n;
     }

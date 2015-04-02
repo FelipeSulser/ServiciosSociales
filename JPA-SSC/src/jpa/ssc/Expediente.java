@@ -27,7 +27,12 @@ public class Expediente implements Serializable {
     private String zona;
     @OneToMany(mappedBy = "propietario")
     private List<Vivienda> viviendas;
+    @OneToMany(mappedBy = "expediente")
+    private List<Familiar> familiares;
     
+    public Expediente(){
+        
+    }
     public String getCss() {
         return css;
     }
