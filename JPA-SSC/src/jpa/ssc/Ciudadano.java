@@ -40,7 +40,9 @@ public class Ciudadano implements Serializable {
     @OneToMany(mappedBy="ciudadano")
     private List<Cita> citas;
     
-    
+    public Ciudadano(){
+        
+    }
     
     public String getDni() {
         return dni;

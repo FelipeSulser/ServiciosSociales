@@ -36,6 +36,9 @@ public class Cita implements Serializable {
     
     private String comentarios;
     
+    public Cita(){
+        
+    }
     public Long getId() {
         return id;
     }

@@ -33,6 +33,9 @@ public class Vivienda implements Serializable {
     @ManyToOne
     private Expediente propietario;
 
+    public Vivienda(){
+        
+    }
     public String getCalle() {
         return calle;
     }
