@@ -30,7 +30,7 @@ public class Ciudadano implements Serializable {
     
     
     private String nombre;
-
+    @Column(nullable=false)
     private String apellido1;
     private String apellido2;
     private String nacionalidad;
