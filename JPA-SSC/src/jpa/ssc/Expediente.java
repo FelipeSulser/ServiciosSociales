@@ -29,6 +29,24 @@ public class Expediente implements Serializable {
     private List<Vivienda> viviendas;
     @OneToMany(mappedBy = "expediente")
     private List<Familiar> familiares;
+    @OneToMany(mappedBy = "intervenciones")
+    private List<Intervenciones> intervenciones;
+
+    public List<Familiar> getFamiliares() {
+        return familiares;
+    }
+
+    public void setFamiliares(List<Familiar> familiares) {
+        this.familiares = familiares;
+    }
+
+    public List<Intervenciones> getIntervenciones() {
+        return intervenciones;
+    }
+
+    public void setIntervenciones(List<Intervenciones> intervenciones) {
+        this.intervenciones = intervenciones;
+    }
     
     public Expediente(){
         
