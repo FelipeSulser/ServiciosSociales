@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 
 /**
  *
- * @author haritz
+ * @author Grupo E
  */
 @Entity
 public class Vivienda implements Serializable {
@@ -24,14 +24,18 @@ public class Vivienda implements Serializable {
     private Long id;
     
     private String calle;
-    private String codigoPostal;
+    private String codigo_postal;
     private String municipio;
-    private String regimenTenencia;
-    private String metrosCuadrados;
-    private String tlf;
+    private String regimen_tenencia;
+    private String metros_cuadrados;
+    private String telefono;
     private String condiciones;
     @ManyToOne
     private Expediente propietario;
+    
+    private Ciudadano titular;
+
+    
 
     public Vivienda(){
         
@@ -45,11 +49,11 @@ public class Vivienda implements Serializable {
     }
 
     public String getCodigoPostal() {
-        return codigoPostal;
+        return codigo_postal;
     }
 
     public void setCodigoPostal(String codigoPostal) {
-        this.codigoPostal = codigoPostal;
+        this.codigo_postal = codigoPostal;
     }
 
     public String getMunicipio() {
@@ -61,27 +65,35 @@ public class Vivienda implements Serializable {
     }
 
     public String getRegimenTenencia() {
-        return regimenTenencia;
+        return regimen_tenencia;
     }
 
     public void setRegimenTenencia(String regimenTenencia) {
-        this.regimenTenencia = regimenTenencia;
+        this.regimen_tenencia = regimenTenencia;
+    }
+    
+    public Ciudadano getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Ciudadano titular) {
+        this.titular = titular;
     }
 
     public String getMetrosCuadrados() {
-        return metrosCuadrados;
+        return metros_cuadrados;
     }
 
     public void setMetrosCuadrados(String metrosCuadrados) {
-        this.metrosCuadrados = metrosCuadrados;
+        this.metros_cuadrados = metrosCuadrados;
     }
 
     public String getTlf() {
-        return tlf;
+        return telefono;
     }
 
     public void setTlf(String tlf) {
-        this.tlf = tlf;
+        this.telefono = tlf;
     }
 
     public String getCondiciones() {
