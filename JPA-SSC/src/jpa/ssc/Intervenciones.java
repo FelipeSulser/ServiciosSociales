@@ -19,7 +19,7 @@ import javax.persistence.OneToOne;
 
 /**
  *
- * @author felipesulser
+ * @author Grupo E
  */
 @Entity
 public class Intervenciones implements Serializable {
@@ -27,6 +27,10 @@ public class Intervenciones implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @Column(nullable=false)
+    private Date fecha;
+    private String anotaciones;
     
     @ManyToOne
     private Expediente expediente;
@@ -62,12 +66,6 @@ public class Intervenciones implements Serializable {
     public void setCita(Cita cita) {
         this.cita = cita;
     }
-    
-    @Column(nullable=false)
-    private Date fecha;
-    
-    
-    private String anotaciones;
     
    @OneToOne(fetch=FetchType.LAZY)
    private Cita cita;
