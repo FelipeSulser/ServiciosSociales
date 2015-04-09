@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
 
 /**
  *
- * @author felipesulser
+ * @author Grupo E
  */
 @Entity
 public class Cita implements Serializable {
@@ -25,20 +25,53 @@ public class Cita implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @Column(nullable=false)
+    private Date fecha;
+    
+    
+    private String comentarios;
+
+    
+    private String tipo_de_cita;
+
+
+    
     @ManyToOne
     private Ciudadano ciudadano;
     
     @ManyToOne
     private Profesional profesional;
     
-    @Column(nullable=false)
-    private Date fecha;
     
-    private String comentarios;
     
     public Cita(){
         
     }
+    
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+    
+    public String getTipo_de_cita() {
+        return tipo_de_cita;
+    }
+
+    public void setTipo_de_cita(String tipo_de_cita) {
+        this.tipo_de_cita = tipo_de_cita;
+    }    
+    
     public Long getId() {
         return id;
     }

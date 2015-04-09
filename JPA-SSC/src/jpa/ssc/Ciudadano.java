@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 /**
  *
- * @author felipesulser
+ * @author Grupo E
  */
 @Entity
 @Table(uniqueConstraints={@UniqueConstraint(columnNames={"dni"})})
@@ -24,11 +24,9 @@ public class Ciudadano implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
    
     private String dni;
-    
-    
+        
     private String nombre;
     @Column(nullable=false)
     private String apellido1;
@@ -39,6 +37,11 @@ public class Ciudadano implements Serializable {
     
     @OneToMany(mappedBy="ciudadano")
     private List<Cita> citas;
+    
+    @Column(nullable = false)
+    private Vivienda vivienda_actual;
+
+    
     
     public Ciudadano(){
         
@@ -60,6 +63,14 @@ public class Ciudadano implements Serializable {
         this.nombre = nombre;
     }
 
+    public Vivienda getVivienda_actual() {
+        return vivienda_actual;
+    }
+
+    public void setVivienda_actual(Vivienda vivienda_actual) {
+        this.vivienda_actual = vivienda_actual;
+    }
+    
     public String getApellido1() {
         return apellido1;
     }

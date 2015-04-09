@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
 
 /**
  *
- * @author haritz
+ * @author Grupo E
  */
 @Entity
 public class Familiar implements Serializable {
@@ -32,8 +32,18 @@ public class Familiar implements Serializable {
     private String apellido1;
     private String apellido2;
     private String parentesco;
-    private Date fechaNacimiento;
-    private double ingresoMedio;
+    private Date fecha_nacimiento;
+    private double ingreso_medio;
+    private String mu;
+
+    public String getMu() {
+        return mu;
+    }
+
+    public void setMu(String mu) {
+        this.mu = mu;
+    }
+    
     @ManyToOne
     private Expediente expediente;
 
@@ -81,19 +91,19 @@ public class Familiar implements Serializable {
     }
 
     public Date getFechaNacimiento() {
-        return fechaNacimiento;
+        return fecha_nacimiento;
     }
 
     public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+        this.fecha_nacimiento = fechaNacimiento;
     }
 
     public double getIngresoMedio() {
-        return ingresoMedio;
+        return ingreso_medio;
     }
 
     public void setIngresoMedio(double ingresoMedio) {
-        this.ingresoMedio = ingresoMedio;
+        this.ingreso_medio = ingresoMedio;
     }
 
     public Expediente getExpediente() {

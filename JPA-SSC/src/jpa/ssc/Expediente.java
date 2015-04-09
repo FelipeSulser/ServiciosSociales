@@ -7,15 +7,18 @@ package jpa.ssc;
 
 import java.io.Serializable;
 import java.util.List;
+import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
  
 /**
  *
- * @author felipesulser
+ * @author Grupo E
  */
 @Entity
 public class Expediente implements Serializable {
@@ -25,12 +28,16 @@ public class Expediente implements Serializable {
     private Long id;
     private String css;
     private String zona;
+    private Date fecha_apertura;
+
+    
     @OneToMany(mappedBy = "propietario")
     private List<Vivienda> viviendas;
     @OneToMany(mappedBy = "expediente")
     private List<Familiar> familiares;
     @OneToMany(mappedBy = "intervenciones")
     private List<Intervenciones> intervenciones;
+    
 
     public List<Familiar> getFamiliares() {
         return familiares;
@@ -66,11 +73,14 @@ public class Expediente implements Serializable {
     public void setZona(String zona) {
         this.zona = zona;
     }
+    
+    
 
     public List<Vivienda> getViviendas() {
         return viviendas;
     }
 
+    
     public void setViviendas(List<Vivienda> viviendas) {
         this.viviendas = viviendas;
     }
@@ -82,7 +92,15 @@ public class Expediente implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+    
+    public Date getFecha_apertura() {
+        return fecha_apertura;
+    }
 
+    public void setFecha_apertura(Date fecha_apertura) {
+        this.fecha_apertura = fecha_apertura;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

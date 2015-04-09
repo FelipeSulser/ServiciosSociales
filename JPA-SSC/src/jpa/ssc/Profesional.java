@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 
 /**
  *
- * @author felipesulser
+ * @author Grupo E
  */
 @Entity
 public class Profesional implements Serializable {

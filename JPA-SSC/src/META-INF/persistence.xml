@@ -7,6 +7,8 @@
     <class>jpa.ssc.Expediente</class>
     <class>jpa.ssc.Profesional</class>
     <class>jpa.ssc.Intervenciones</class>
+    <class>jpa.ssc.Familiar</class>
+    <class>jpa.ssc.Vivienda</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/myDb"/>
       <property name="javax.persistence.jdbc.password" value=""/>
