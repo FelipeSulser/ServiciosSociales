@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -44,10 +45,10 @@ public class Expediente implements Serializable {
     private List<Vivienda> viviendas;
     
     @OneToMany(mappedBy = "expediente_fam")
-    
     private List<Familiar> familiares;
     
-    @OneToMany(mappedBy = "intervenciones")
+    @OneToMany
+    @JoinColumn
     private List<Intervenciones> intervenciones;
     
 

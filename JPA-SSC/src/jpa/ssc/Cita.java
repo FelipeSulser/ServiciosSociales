@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -40,7 +41,7 @@ public class Cita implements Serializable {
     private Ciudadano ciudadano;
     
     @ManyToOne
-    @Column(nullable=false)
+    @JoinColumn(nullable=false)
     private Profesional profesional;
     
     

@@ -39,7 +39,7 @@ public class Ciudadano implements Serializable {
     private List<Cita> citas;
     
     @OneToOne
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private Vivienda vivienda_actual;
 
    

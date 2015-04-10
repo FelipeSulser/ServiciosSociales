@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -48,7 +49,7 @@ public class Familiar implements Serializable {
     }
     
     @ManyToOne
-    @Column(nullable=false)
+    @JoinColumn(nullable=false)
     private Expediente expediente_fam;
 
     public Familiar(){
