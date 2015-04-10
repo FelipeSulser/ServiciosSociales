@@ -47,8 +47,7 @@ public class Expediente implements Serializable {
     @OneToMany(mappedBy = "expediente_fam")
     private List<Familiar> familiares;
     
-    @OneToMany
-    @JoinColumn
+    @OneToMany(mappedBy="expediente")
     private List<Intervenciones> intervenciones;
     
 

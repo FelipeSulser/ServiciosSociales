@@ -33,6 +33,7 @@ public class Intervenciones implements Serializable {
     private String anotaciones;
     
     @ManyToOne
+    @JoinColumn(nullable=false)
     private Expediente expediente;
 
     public Expediente getExpediente() {
