@@ -39,6 +39,8 @@ public class Profesional implements Serializable {
     
     @OneToMany(mappedBy="profesional")
     private List<Cita> citas;
+
+    
     
     public Profesional(){
         
@@ -77,6 +79,14 @@ public class Profesional implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public List<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(List<Cita> citas) {
+        this.citas = citas;
     }
 
     @Override
