@@ -24,7 +24,7 @@ public class Ciudadano implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-   
+   @Column(unique=true,nullable=false)
     private String dni;
     @Column(nullable=false)
     private String nombre;
