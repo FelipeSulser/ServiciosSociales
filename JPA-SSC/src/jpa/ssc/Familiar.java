@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -25,13 +26,16 @@ public class Familiar implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(unique=true)
+    @Column(unique=true,nullable=false)
     private String dni;
+    @Column(nullable=false)
     private String nombre;
     @Column(nullable=false)
     private String apellido1;
     private String apellido2;
+    @Column(nullable=false)
     private String parentesco;
+    @Column(nullable=false)
     private Date fecha_nacimiento;
     private double ingreso_medio;
     private String mu;
@@ -45,7 +49,8 @@ public class Familiar implements Serializable {
     }
     
     @ManyToOne
-    private Expediente expediente;
+    @JoinColumn(nullable=false)
+    private Expediente expediente_fam;
 
     public Familiar(){
         
@@ -107,11 +112,11 @@ public class Familiar implements Serializable {
     }
 
     public Expediente getExpediente() {
-        return expediente;
+        return expediente_fam;
     }
 
     public void setExpediente(Expediente expediente) {
-        this.expediente = expediente;
+        this.expediente_fam = expediente;
     }
     
     public Long getId() {

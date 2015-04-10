@@ -6,11 +6,13 @@
 package jpa.ssc;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -22,17 +24,33 @@ public class Vivienda implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
+    @Column(nullable=false)
     private String calle;
+    @Column(nullable=false)
     private String codigo_postal;
+    @Column(nullable= false)
     private String municipio;
+    
+    @Column(nullable=false)
     private String regimen_tenencia;
+    
+    
+    
     private String metros_cuadrados;
     private String telefono;
     private String condiciones;
+    
+    /**
+     * Un ciudadano puede tener muchas viviendas, en esta relación no se especifica si es su vivienda donde reside
+     */
     @ManyToOne
     private Expediente propietario;
     
+    
+    /**
+     * Esta relación es la que asigna tu domicilio principal al ciudadano
+     */
+    @OneToOne(mappedBy= "vivienda_actual")
     private Ciudadano titular;
 
     

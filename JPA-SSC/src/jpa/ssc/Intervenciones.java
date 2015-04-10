@@ -67,7 +67,8 @@ public class Intervenciones implements Serializable {
         this.cita = cita;
     }
     
-   @OneToOne(fetch=FetchType.LAZY)
+   @OneToOne
+   @JoinColumn(nullable=false)
    private Cita cita;
 
     public Long getId() {

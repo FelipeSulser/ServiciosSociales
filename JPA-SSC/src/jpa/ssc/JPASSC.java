@@ -20,7 +20,7 @@ public class JPASSC {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        /*
+       
         EntityManagerFactory emf;
         EntityManager em;
         emf = Persistence.createEntityManagerFactory("JPA-SSCPU");
@@ -28,8 +28,8 @@ public class JPASSC {
         //ADD TODO HERE
         
         em.close();
-        emf.close();
-                */
+        
+              
     }
     
 }

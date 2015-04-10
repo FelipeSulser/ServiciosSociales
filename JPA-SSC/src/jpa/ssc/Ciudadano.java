@@ -24,24 +24,33 @@ public class Ciudadano implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-   
+    
+    @Column(unique=true,nullable=false)
     private String dni;
-        
+    
+    @Column(nullable=false)
     private String nombre;
+    
     @Column(nullable=false)
     private String apellido1;
+    
     private String apellido2;
+    @Column(nullable=false)
     private String nacionalidad;
+    @Column(nullable=false)
     private Date fecha_nacimiento;
     
     
     @OneToMany(mappedBy="ciudadano")
     private List<Cita> citas;
     
-    @Column(nullable = false)
+    @OneToOne
+    @JoinColumn(nullable = false)
     private Vivienda vivienda_actual;
 
-    
+   
+    @OneToOne
+    private Expediente expediente_personal;
     
     public Ciudadano(){
         
@@ -58,6 +67,23 @@ public class Ciudadano implements Serializable {
     public String getNombre() {
         return nombre;
     }
+    
+     public List<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(List<Cita> citas) {
+        this.citas = citas;
+    }
+
+    public Expediente getExpediente_personal() {
+        return expediente_personal;
+    }
+
+    public void setExpediente_personal(Expediente expediente_personal) {
+        this.expediente_personal = expediente_personal;
+    }
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
