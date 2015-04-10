@@ -48,7 +48,6 @@ public class Vivienda implements Serializable {
     /**
      * Esta relación es la que asigna la residencia principal del ciudadano.
      */
-    @OneToOne(mappedBy= "residencia")
     @JoinColumn(nullable = false)
     private Expediente expediente_residencia;
     
