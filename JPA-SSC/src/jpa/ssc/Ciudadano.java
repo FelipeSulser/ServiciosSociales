@@ -26,7 +26,7 @@ public class Ciudadano implements Serializable {
     private Long id;
    
     private String dni;
-        
+    @Column(nullable=false)
     private String nombre;
     @Column(nullable=false)
     private String apellido1;

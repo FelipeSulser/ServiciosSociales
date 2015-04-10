@@ -8,6 +8,7 @@ package jpa.ssc;
 import java.io.Serializable;
 import java.util.List;
 import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,8 +27,12 @@ public class Expediente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @Column(nullable=false)
     private String css;
+    @Column(nullable=false)
     private String zona;
+    @Column(nullable=false)
     private Date fecha_apertura;
 
     @OneToOne(mappedBy="expediente_personal")

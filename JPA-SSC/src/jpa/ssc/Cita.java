@@ -31,7 +31,7 @@ public class Cita implements Serializable {
     
     private String comentarios;
 
-    
+    @Column(nullable=false)
     private String tipo_de_cita;
 
 
