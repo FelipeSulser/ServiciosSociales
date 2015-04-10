@@ -10,11 +10,11 @@
     <class>jpa.ssc.Familiar</class>
     <class>jpa.ssc.Vivienda</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JPA-ssc"/>
-      <property name="javax.persistence.jdbc.password" value="felipe"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/ServiciosSociales"/>
+      <property name="javax.persistence.jdbc.password" value="usuario"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.user" value="felipe"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.jdbc.user" value="usuario"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>

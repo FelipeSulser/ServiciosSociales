@@ -18,7 +18,7 @@ import javax.persistence.*;
  * @author Grupo E
  */
 @Entity
-@Table(uniqueConstraints={@UniqueConstraint(columnNames={"dni"})})
+
 public class Ciudadano implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
