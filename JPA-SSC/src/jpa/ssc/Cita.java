@@ -40,6 +40,7 @@ public class Cita implements Serializable {
     private Ciudadano ciudadano;
     
     @ManyToOne
+    @Column(nullable=false)
     private Profesional profesional;
     
     

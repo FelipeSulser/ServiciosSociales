@@ -30,11 +30,18 @@ public class Expediente implements Serializable {
     private String zona;
     private Date fecha_apertura;
 
+    @OneToOne(mappedBy="expediente_personal")
+    private Ciudadano ciudadano_exp;
+
+   
     
     @OneToMany(mappedBy = "propietario")
     private List<Vivienda> viviendas;
-    @OneToMany(mappedBy = "expediente")
+    
+    @OneToMany(mappedBy = "expediente_fam")
+    
     private List<Familiar> familiares;
+    
     @OneToMany(mappedBy = "intervenciones")
     private List<Intervenciones> intervenciones;
     
@@ -45,6 +52,13 @@ public class Expediente implements Serializable {
 
     public void setFamiliares(List<Familiar> familiares) {
         this.familiares = familiares;
+    }
+     public Ciudadano getCiudadano() {
+        return ciudadano_exp;
+    }
+
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano_exp = ciudadano;
     }
 
     public List<Intervenciones> getIntervenciones() {

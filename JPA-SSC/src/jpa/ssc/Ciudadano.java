@@ -38,10 +38,13 @@ public class Ciudadano implements Serializable {
     @OneToMany(mappedBy="ciudadano")
     private List<Cita> citas;
     
+    @OneToOne
     @Column(nullable = false)
     private Vivienda vivienda_actual;
 
-    
+   
+    @OneToOne
+    private Expediente expediente_personal;
     
     public Ciudadano(){
         
@@ -58,6 +61,23 @@ public class Ciudadano implements Serializable {
     public String getNombre() {
         return nombre;
     }
+    
+     public List<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(List<Cita> citas) {
+        this.citas = citas;
+    }
+
+    public Expediente getExpediente_personal() {
+        return expediente_personal;
+    }
+
+    public void setExpediente_personal(Expediente expediente_personal) {
+        this.expediente_personal = expediente_personal;
+    }
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

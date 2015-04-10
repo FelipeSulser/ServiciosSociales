@@ -33,6 +33,7 @@ public class Intervenciones implements Serializable {
     private String anotaciones;
     
     @ManyToOne
+    @Column(nullable=false)
     private Expediente expediente;
 
     public Expediente getExpediente() {
@@ -68,6 +69,7 @@ public class Intervenciones implements Serializable {
     }
     
    @OneToOne(fetch=FetchType.LAZY)
+   @Column(nullable=false)
    private Cita cita;
 
     public Long getId() {

@@ -45,7 +45,8 @@ public class Familiar implements Serializable {
     }
     
     @ManyToOne
-    private Expediente expediente;
+    @Column(nullable=false)
+    private Expediente expediente_fam;
 
     public Familiar(){
         
@@ -107,11 +108,11 @@ public class Familiar implements Serializable {
     }
 
     public Expediente getExpediente() {
-        return expediente;
+        return expediente_fam;
     }
 
     public void setExpediente(Expediente expediente) {
-        this.expediente = expediente;
+        this.expediente_fam = expediente;
     }
     
     public Long getId() {
