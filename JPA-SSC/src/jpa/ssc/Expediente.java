@@ -39,10 +39,11 @@ public class Expediente implements Serializable {
     @OneToOne(mappedBy="expediente_personal")
     private Ciudadano ciudadano_exp;
 
-   
-    
     @OneToMany(mappedBy = "propietario")
     private List<Vivienda> viviendas;
+
+    @OneToOne(mappedBy="expediente_residencia")
+    private Vivienda residencia;
     
     @OneToMany(mappedBy = "expediente_fam")
     private List<Familiar> familiares;
@@ -50,7 +51,15 @@ public class Expediente implements Serializable {
     @OneToMany(mappedBy="expediente")
     private List<Intervenciones> intervenciones;
     
+    
+    public Vivienda getResidencia() {
+        return residencia;
+    }
 
+    public void setResidencia(Vivienda residencia) {
+        this.residencia = residencia;
+    }
+    
     public List<Familiar> getFamiliares() {
         return familiares;
     }

@@ -45,11 +45,6 @@ public class Ciudadano implements Serializable {
     private List<Cita> citas;
     
     @OneToOne
-    @JoinColumn(nullable = false)
-    private Vivienda vivienda_actual;
-
-   
-    @OneToOne
     private Expediente expediente_personal;
     
     public Ciudadano(){
@@ -87,14 +82,6 @@ public class Ciudadano implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Vivienda getVivienda_actual() {
-        return vivienda_actual;
-    }
-
-    public void setVivienda_actual(Vivienda vivienda_actual) {
-        this.vivienda_actual = vivienda_actual;
     }
     
     public String getApellido1() {
