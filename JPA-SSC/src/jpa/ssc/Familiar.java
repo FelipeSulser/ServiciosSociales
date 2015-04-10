@@ -39,6 +39,9 @@ public class Familiar implements Serializable {
     private Date fecha_nacimiento;
     private double ingreso_medio;
     private String mu;
+    @ManyToOne
+    @JoinColumn(nullable=false)
+    private Expediente expediente_fam;
 
     public String getMu() {
         return mu;
@@ -48,9 +51,6 @@ public class Familiar implements Serializable {
         this.mu = mu;
     }
     
-    @ManyToOne
-    @JoinColumn(nullable=false)
-    private Expediente expediente_fam;
 
     public Familiar(){
         
