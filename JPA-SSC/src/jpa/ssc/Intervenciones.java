@@ -35,6 +35,10 @@ public class Intervenciones implements Serializable {
     @ManyToOne
     @JoinColumn(nullable=false)
     private Expediente expediente;
+    
+    @OneToOne
+    @JoinColumn(nullable=false)
+    private Cita cita;
 
     public Expediente getExpediente() {
         return expediente;
@@ -68,9 +72,6 @@ public class Intervenciones implements Serializable {
         this.cita = cita;
     }
     
-   @OneToOne
-   @JoinColumn(nullable=false)
-   private Cita cita;
 
     public Long getId() {
         return id;
