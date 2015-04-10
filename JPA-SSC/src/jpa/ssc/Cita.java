@@ -40,6 +40,7 @@ public class Cita implements Serializable {
     @ManyToOne
     @JoinColumn(nullable=false)
     private Ciudadano ciudadano;
+
     
     @ManyToOne
     @JoinColumn(nullable=false)
@@ -49,6 +50,22 @@ public class Cita implements Serializable {
     
     public Cita(){
         
+    }
+    
+    public Ciudadano getCiudadano() {
+        return ciudadano;
+    }
+
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano = ciudadano;
+    }
+
+    public Profesional getProfesional() {
+        return profesional;
+    }
+
+    public void setProfesional(Profesional profesional) {
+        this.profesional = profesional;
     }
     
     public Date getFecha() {
