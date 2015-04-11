@@ -44,6 +44,9 @@ public class Ciudadano implements Serializable {
     @OneToMany(mappedBy="ciudadano")
     private List<Cita> citas;
     
+    @OneToOne(mappedBy="ciudadano_exp")
+    private Expediente expediente_personal;
+    
     
     public Ciudadano(){
         

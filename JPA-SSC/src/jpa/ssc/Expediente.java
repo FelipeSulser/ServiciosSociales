@@ -29,6 +29,7 @@ public class Expediente implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    
     @Column(nullable=false)
     private String css;
     @Column(nullable=false)
@@ -48,6 +49,9 @@ public class Expediente implements Serializable {
     @OneToMany(mappedBy="expediente")
     private List<Intervenciones> intervenciones;
     
+    @OneToOne
+    @JoinColumn(nullable=false)
+    private Ciudadano ciudadano_exp;
     
     public Vivienda getResidencia() {
         return residencia;
