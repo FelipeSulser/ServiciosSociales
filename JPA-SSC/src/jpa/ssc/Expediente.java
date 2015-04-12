@@ -8,10 +8,12 @@ package jpa.ssc;
 import java.io.Serializable;
 import java.util.List;
 import java.sql.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -26,19 +28,39 @@ public class Expediente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    
+    @Column(nullable=false)
     private String css;
+    @Column(nullable=false)
     private String zona;
+    @Column(nullable=false)
     private Date fecha_apertura;
 
-    
     @OneToMany(mappedBy = "propietario")
     private List<Vivienda> viviendas;
-    @OneToMany(mappedBy = "expediente")
+
+    @OneToOne(mappedBy="expediente_residencia")
+    private Vivienda residencia;
+    
+    @OneToMany(mappedBy = "expediente_fam")
     private List<Familiar> familiares;
-    @OneToMany(mappedBy = "intervenciones")
+    
+    @OneToMany(mappedBy="expediente")
     private List<Intervenciones> intervenciones;
     
+    @OneToOne
+    @JoinColumn(nullable=false)
+    private Ciudadano ciudadano_exp;
+    
+    public Vivienda getResidencia() {
+        return residencia;
+    }
 
+    public void setResidencia(Vivienda residencia) {
+        this.residencia = residencia;
+    }
+    
     public List<Familiar> getFamiliares() {
         return familiares;
     }

@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -31,21 +32,40 @@ public class Cita implements Serializable {
     
     private String comentarios;
 
-    
+    @Column(nullable=false)
     private String tipo_de_cita;
 
 
     
     @ManyToOne
+    @JoinColumn(nullable=false)
     private Ciudadano ciudadano;
+
     
     @ManyToOne
+    @JoinColumn(nullable=false)
     private Profesional profesional;
     
     
     
     public Cita(){
         
+    }
+    
+    public Ciudadano getCiudadano() {
+        return ciudadano;
+    }
+
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano = ciudadano;
+    }
+
+    public Profesional getProfesional() {
+        return profesional;
+    }
+
+    public void setProfesional(Profesional profesional) {
+        this.profesional = profesional;
     }
     
     public Date getFecha() {

@@ -25,9 +25,11 @@ public class Profesional implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @Column(unique=true)
+    @Column(unique=true,nullable=false)
     private String dni;
-
+    
+    
+    @Column(nullable=false)
     private String nombre;
     
     @Column(nullable=false)
@@ -37,6 +39,8 @@ public class Profesional implements Serializable {
     
     @OneToMany(mappedBy="profesional")
     private List<Cita> citas;
+
+    
     
     public Profesional(){
         
@@ -75,6 +79,14 @@ public class Profesional implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public List<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(List<Cita> citas) {
+        this.citas = citas;
     }
 
     @Override
