@@ -46,8 +46,9 @@ public class Expediente implements Serializable {
     @OneToMany(mappedBy = "expediente_fam")
     private List<Familiar> familiares;
     
-    @OneToMany(mappedBy="expediente")
+    @OneToMany(mappedBy="intervenciones_exp", orphanRemoval=true)
     private List<Intervenciones> intervenciones;
+
     
     @OneToOne
     @JoinColumn(nullable=false)
@@ -69,6 +70,7 @@ public class Expediente implements Serializable {
         this.familiares = familiares;
     }
 
+    
     public List<Intervenciones> getIntervenciones() {
         return intervenciones;
     }
@@ -76,7 +78,14 @@ public class Expediente implements Serializable {
     public void setIntervenciones(List<Intervenciones> intervenciones) {
         this.intervenciones = intervenciones;
     }
-    
+
+    public Ciudadano getCiudadano_exp() {
+        return ciudadano_exp;
+    }
+
+    public void setCiudadano_exp(Ciudadano ciudadano_exp) {
+        this.ciudadano_exp = ciudadano_exp;
+    }
     public Expediente(){
         
     }

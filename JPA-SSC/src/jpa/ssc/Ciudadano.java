@@ -41,11 +41,12 @@ public class Ciudadano implements Serializable {
     private Date fecha_nacimiento;
     
     
-    @OneToMany(mappedBy="ciudadano")
+    @OneToMany(mappedBy="ciudadano", orphanRemoval=true)
     private List<Cita> citas;
     
     @OneToOne(mappedBy="ciudadano_exp")
     private Expediente expediente_personal;
+
     
     
     public Ciudadano(){
@@ -56,6 +57,13 @@ public class Ciudadano implements Serializable {
         return serialVersionUID;
     }
     
+    public Expediente getExpediente_personal() {
+        return expediente_personal;
+    }
+
+    public void setExpediente_personal(Expediente expediente_personal) {
+        this.expediente_personal = expediente_personal;
+    }
     public String getDni() {
         return dni;
     }

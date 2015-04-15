@@ -7,6 +7,7 @@ package jpa.ssc;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -46,6 +48,9 @@ public class Cita implements Serializable {
     @JoinColumn(nullable=false)
     private Profesional profesional;
     
+    @OneToMany(mappedBy="id_cita", orphanRemoval=true)
+    private List<Intervenciones> intervenciones;
+
     
     
     public Cita(){
@@ -102,6 +107,14 @@ public class Cita implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public List<Intervenciones> getIntervenciones() {
+        return intervenciones;
+    }
+
+    public void setIntervenciones(List<Intervenciones> intervenciones) {
+        this.intervenciones = intervenciones;
     }
 
     @Override
