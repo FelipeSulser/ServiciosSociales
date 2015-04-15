@@ -49,8 +49,20 @@ public class Intervenciones implements Serializable {
         
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public Cita getId_cita() {
+        return id_cita;
+    }
+
+    public void setId_cita(Cita id_cita) {
+        this.id_cita = id_cita;
+    }
+
+    public Expediente getIntervenciones_exp() {
+        return intervenciones_exp;
+    }
+
+    public void setIntervenciones_exp(Expediente intervenciones_exp) {
+        this.intervenciones_exp = intervenciones_exp;
     }
 
     public Expediente getExpediente() {

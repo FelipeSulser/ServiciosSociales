@@ -62,6 +62,14 @@ public class Familiar implements Serializable {
         return dni;
     }
 
+    public Expediente getExpediente_fam() {
+        return expediente_fam;
+    }
+
+    public void setExpediente_fam(Expediente expediente_fam) {
+        this.expediente_fam = expediente_fam;
+    }
+
     public void setDni(String dni) {
         this.dni = dni;
     }
