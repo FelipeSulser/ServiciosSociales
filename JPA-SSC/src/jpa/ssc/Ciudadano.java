@@ -51,6 +51,10 @@ public class Ciudadano implements Serializable {
     public Ciudadano(){
         
     }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
     
     public String getDni() {
         return dni;

@@ -45,6 +45,11 @@ public class Profesional implements Serializable {
     public Profesional(){
         
     }
+    
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+    
     public void setNombre(String n){
         nombre = n;
     }
