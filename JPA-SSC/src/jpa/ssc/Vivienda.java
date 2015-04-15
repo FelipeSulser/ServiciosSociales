@@ -42,6 +42,7 @@ public class Vivienda implements Serializable {
      * Un ciudadano puede tener muchas viviendas, en esta relación no se especifica si es su vivienda donde reside
      */
     @ManyToOne
+    @JoinColumn(nullable=false)
     private Expediente propietario;
     
     
