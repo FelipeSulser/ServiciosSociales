@@ -40,6 +40,14 @@ public class Intervenciones implements Serializable {
     @JoinColumn(nullable=false)
     private Cita cita;
 
+    public Intervenciones() {
+        
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     public Expediente getExpediente() {
         return expediente;
     }
