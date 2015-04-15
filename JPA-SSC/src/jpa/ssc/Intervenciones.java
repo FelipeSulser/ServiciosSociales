@@ -34,18 +34,23 @@ public class Intervenciones implements Serializable {
     
     @ManyToOne
     @JoinColumn(nullable=false)
-    private Expediente expediente;
-    
-    @OneToOne
+    private Cita id_cita;
+
+    @ManyToOne
     @JoinColumn(nullable=false)
-    private Cita cita;
+    private Expediente intervenciones_exp;
+    
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Expediente getExpediente() {
-        return expediente;
+        return intervenciones_exp;
     }
 
     public void setExpediente(Expediente expediente) {
-        this.expediente = expediente;
+        this.intervenciones_exp = expediente;
     }
 
     public Date getFecha() {
@@ -64,14 +69,13 @@ public class Intervenciones implements Serializable {
         this.anotaciones = anotaciones;
     }
 
-    public Cita getCita() {
-        return cita;
+    public Cita getIntervenciones_cita() {
+        return id_cita;
     }
 
-    public void setCita(Cita cita) {
-        this.cita = cita;
+    public void setIntervenciones_cita(Cita intervenciones_cita) {
+        this.id_cita = intervenciones_cita;
     }
-    
 
     public Long getId() {
         return id;

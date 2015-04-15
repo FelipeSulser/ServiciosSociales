@@ -37,7 +37,7 @@ public class Profesional implements Serializable {
     
     private String apellido2;
     
-    @OneToMany(mappedBy="profesional")
+    @OneToMany(mappedBy="profesional",orphanRemoval=true)
     private List<Cita> citas;
 
     
