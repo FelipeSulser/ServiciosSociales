@@ -61,6 +61,10 @@ public class Expediente implements Serializable {
     public void setResidencia(Vivienda residencia) {
         this.residencia = residencia;
     }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
     
     public List<Familiar> getFamiliares() {
         return familiares;
