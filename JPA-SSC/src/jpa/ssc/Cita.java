@@ -35,7 +35,7 @@ public class Cita implements Serializable {
     @Column(nullable=false)
     private String tipo_de_cita;
 
-
+    
     
     @ManyToOne
     @JoinColumn(nullable=false)
@@ -56,6 +56,10 @@ public class Cita implements Serializable {
         return ciudadano;
     }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+    
     public void setCiudadano(Ciudadano ciudadano) {
         this.ciudadano = ciudadano;
     }

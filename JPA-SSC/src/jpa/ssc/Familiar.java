@@ -50,8 +50,11 @@ public class Familiar implements Serializable {
     public void setMu(String mu) {
         this.mu = mu;
     }
-    
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+    
     public Familiar(){
         
     }
@@ -95,20 +98,20 @@ public class Familiar implements Serializable {
         this.parentesco = parentesco;
     }
 
-    public Date getFechaNacimiento() {
+    public Date getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fecha_nacimiento = fechaNacimiento;
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public double getIngresoMedio() {
+    public double getIngreso_medio() {
         return ingreso_medio;
     }
 
-    public void setIngresoMedio(double ingresoMedio) {
-        this.ingreso_medio = ingresoMedio;
+    public void setIngreso_medio(double ingreso_medio) {
+        this.ingreso_medio = ingreso_medio;
     }
 
     public Expediente getExpediente() {

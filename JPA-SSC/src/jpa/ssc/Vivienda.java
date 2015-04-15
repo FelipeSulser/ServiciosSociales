@@ -56,6 +56,11 @@ public class Vivienda implements Serializable {
     public Vivienda(){
         
     }
+    
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+    
     public String getCalle() {
         return calle;
     }
