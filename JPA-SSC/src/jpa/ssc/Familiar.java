@@ -87,10 +87,6 @@ public class Familiar implements Serializable {
         return ingreso_medio;
     }
 
-    public Expediente getExpediente() {
-        return expediente_fam;
-    }
-    
     public Long getId() {
         return id;
     }
@@ -131,9 +127,6 @@ public class Familiar implements Serializable {
         this.ingreso_medio = ingreso_medio;
     }
     
-    public void setExpediente(Expediente expediente) {
-        this.expediente_fam = expediente;
-    }
 
     public void setId(Long id) {
         this.id = id;
