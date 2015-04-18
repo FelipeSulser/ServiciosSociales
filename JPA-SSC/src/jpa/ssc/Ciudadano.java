@@ -40,14 +40,11 @@ public class Ciudadano implements Serializable {
     @Column(nullable=false)
     private Date fecha_nacimiento;
     
-    
     @OneToMany(mappedBy="ciudadano", orphanRemoval=true)
     private List<Cita> citas;
     
     @OneToOne(mappedBy="ciudadano_exp")
     private Expediente expediente_personal;
-
-    
     
     public Ciudadano(){
         
@@ -61,15 +58,8 @@ public class Ciudadano implements Serializable {
         return expediente_personal;
     }
 
-    public void setExpediente_personal(Expediente expediente_personal) {
-        this.expediente_personal = expediente_personal;
-    }
     public String getDni() {
         return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
     public String getNombre() {
@@ -79,50 +69,57 @@ public class Ciudadano implements Serializable {
      public List<Cita> getCitas() {
         return citas;
     }
-
-    public void setCitas(List<Cita> citas) {
-        this.citas = citas;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
     
     public String getApellido1() {
         return apellido1;
-    }
-
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
     }
 
     public String getApellido2() {
         return apellido2;
     }
 
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
-    }
-
     public String getNacionalidad() {
         return nacionalidad;
-    }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
     }
 
     public Date getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
-    }
-    
-    
     public Long getId() {
         return id;
+    }
+    
+    public void setExpediente_personal(Expediente expediente_personal) {
+        this.expediente_personal = expediente_personal;
+    }
+    
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public void setCitas(List<Cita> citas) {
+        this.citas = citas;
+    }
+    
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }   
+    
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+    
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+     
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public void setId(Long id) {

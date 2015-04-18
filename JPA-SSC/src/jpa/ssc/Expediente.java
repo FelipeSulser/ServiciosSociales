@@ -16,7 +16,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
  
 /**
  *
@@ -28,8 +27,7 @@ public class Expediente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    
+   
     @Column(nullable=false)
     private String css;
     @Column(nullable=false)
@@ -49,87 +47,84 @@ public class Expediente implements Serializable {
     @OneToMany(mappedBy="intervenciones_exp", orphanRemoval=true)
     private List<Intervenciones> intervenciones;
 
-    
     @OneToOne
     @JoinColumn(nullable=false)
     private Ciudadano ciudadano_exp;
     
-    public Vivienda getResidencia() {
-        return residencia;
+    public Expediente(){
+        
     }
-
-    public void setResidencia(Vivienda residencia) {
-        this.residencia = residencia;
-    }
-
+    
     public static long getSerialVersionUID() {
         return serialVersionUID;
+    }
+    
+    public Vivienda getResidencia() {
+        return residencia;
     }
     
     public List<Familiar> getFamiliares() {
         return familiares;
     }
-
-    public void setFamiliares(List<Familiar> familiares) {
-        this.familiares = familiares;
-    }
-
     
     public List<Intervenciones> getIntervenciones() {
         return intervenciones;
     }
 
-    public void setIntervenciones(List<Intervenciones> intervenciones) {
-        this.intervenciones = intervenciones;
-    }
-
     public Ciudadano getCiudadano_exp() {
         return ciudadano_exp;
     }
-
-    public void setCiudadano_exp(Ciudadano ciudadano_exp) {
-        this.ciudadano_exp = ciudadano_exp;
-    }
-    public Expediente(){
-        
-    }
+    
     public String getCss() {
         return css;
-    }
-
-    public void setCss(String css) {
-        this.css = css;
     }
 
     public String getZona() {
         return zona;
     }
 
-    public void setZona(String zona) {
-        this.zona = zona;
-    }
-    
-    
-
     public List<Vivienda> getViviendas() {
         return viviendas;
-    }
-
-    
-    public void setViviendas(List<Vivienda> viviendas) {
-        this.viviendas = viviendas;
     }
 
     public Long getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
     
     public Date getFecha_apertura() {
         return fecha_apertura;
+    }
+    
+    public void setResidencia(Vivienda residencia) {
+        this.residencia = residencia;
+    }
+    
+    public void setFamiliares(List<Familiar> familiares) {
+        this.familiares = familiares;
+    }
+
+    public void setIntervenciones(List<Intervenciones> intervenciones) {
+        this.intervenciones = intervenciones;
+    }
+
+    public void setCiudadano_exp(Ciudadano ciudadano_exp) {
+        this.ciudadano_exp = ciudadano_exp;
+    }
+    
+    public void setCss(String css) {
+        this.css = css;
+    }
+
+    public void setZona(String zona) {
+        this.zona = zona;
+    }
+    
+    public void setViviendas(List<Vivienda> viviendas) {
+        this.viviendas = viviendas;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setFecha_apertura(Date fecha_apertura) {

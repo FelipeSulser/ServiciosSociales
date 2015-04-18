@@ -9,13 +9,11 @@ import java.io.Serializable;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -40,65 +38,64 @@ public class Intervenciones implements Serializable {
     @JoinColumn(nullable=false)
     private Expediente intervenciones_exp;
     
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public Intervenciones() {
         
+    }
+    
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Cita getId_cita() {
         return id_cita;
     }
 
-    public void setId_cita(Cita id_cita) {
-        this.id_cita = id_cita;
-    }
-
     public Expediente getIntervenciones_exp() {
         return intervenciones_exp;
-    }
-
-    public void setIntervenciones_exp(Expediente intervenciones_exp) {
-        this.intervenciones_exp = intervenciones_exp;
     }
 
     public Expediente getExpediente() {
         return intervenciones_exp;
     }
 
-    public void setExpediente(Expediente expediente) {
-        this.intervenciones_exp = expediente;
-    }
-
     public Date getFecha() {
         return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public String getAnotaciones() {
         return anotaciones;
     }
 
-    public void setAnotaciones(String anotaciones) {
-        this.anotaciones = anotaciones;
-    }
-
     public Cita getIntervenciones_cita() {
         return id_cita;
     }
 
-    public void setIntervenciones_cita(Cita intervenciones_cita) {
-        this.id_cita = intervenciones_cita;
-    }
-
     public Long getId() {
         return id;
+    }
+    
+    public void setId_cita(Cita id_cita) {
+        this.id_cita = id_cita;
+    }
+
+    public void setIntervenciones_exp(Expediente intervenciones_exp) {
+        this.intervenciones_exp = intervenciones_exp;
+    }
+
+    public void setExpediente(Expediente expediente) {
+        this.intervenciones_exp = expediente;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    public void setAnotaciones(String anotaciones) {
+        this.anotaciones = anotaciones;
+    }
+
+    public void setIntervenciones_cita(Cita intervenciones_cita) {
+        this.id_cita = intervenciones_cita;
     }
 
     public void setId(Long id) {
