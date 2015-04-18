@@ -54,10 +54,6 @@ public class Intervenciones implements Serializable {
         return intervenciones_exp;
     }
 
-    public Expediente getExpediente() {
-        return intervenciones_exp;
-    }
-
     public Date getFecha() {
         return fecha;
     }
@@ -80,10 +76,6 @@ public class Intervenciones implements Serializable {
 
     public void setIntervenciones_exp(Expediente intervenciones_exp) {
         this.intervenciones_exp = intervenciones_exp;
-    }
-
-    public void setExpediente(Expediente expediente) {
-        this.intervenciones_exp = expediente;
     }
 
     public void setFecha(Date fecha) {
