@@ -63,10 +63,6 @@ public class Vivienda implements Serializable {
         return calle;
     }
 
-    public String getCodigoPostal() {
-        return codigo_postal;
-    }
-
     public String getMunicipio() {
         return municipio;
     }
@@ -105,10 +101,6 @@ public class Vivienda implements Serializable {
     
     public void setCalle(String calle) {
         this.calle = calle;
-    }
-
-    public void setCodigoPostal(String codigoPostal) {
-        this.codigo_postal = codigoPostal;
     }
 
     public void setMunicipio(String municipio) {
