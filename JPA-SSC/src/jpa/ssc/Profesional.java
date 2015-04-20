@@ -39,8 +39,6 @@ public class Profesional implements Serializable {
     
     @OneToMany(mappedBy="profesional",orphanRemoval=true)
     private List<Cita> citas;
-
-    
     
     public Profesional(){
         
@@ -50,44 +48,48 @@ public class Profesional implements Serializable {
         return serialVersionUID;
     }
     
-    public void setNombre(String n){
-        nombre = n;
-    }
-    
     public String getNombre(){
         return nombre;
     }
     
-    public void setApellido1(String n){
-        apellido1 = n;
-    }
     public String getApellido1(){
         return apellido1;
     }
-    public void setDni(String dn){
-        dni = dn;
-    }
+    
     public String getDni(){
         return dni;
-    }
-    public void setApellido2(String n){
-        apellido2 = n;
-        
     }
     
     public String getApellido2(){
         return apellido2;
     }
+    
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
     
     public List<Cita> getCitas() {
         return citas;
+    }
+    
+    public void setNombre(String n){
+        nombre = n;
+    }
+    
+    public void setApellido1(String n){
+        apellido1 = n;
+    }
+    
+    public void setDni(String dn){
+        dni = dn;
+    }
+    
+    public void setApellido2(String n){
+        apellido2 = n; 
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setCitas(List<Cita> citas) {

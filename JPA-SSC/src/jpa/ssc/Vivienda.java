@@ -45,14 +45,12 @@ public class Vivienda implements Serializable {
     @JoinColumn(nullable=false)
     private Expediente propietario;
     
-    
     /**
      * Esta relación es la que asigna la residencia principal del ciudadano.
      */
     @OneToOne
     private Expediente expediente_residencia;
     
-
     public Vivienda(){
         
     }
@@ -65,85 +63,76 @@ public class Vivienda implements Serializable {
         return calle;
     }
 
-    public void setCalle(String calle) {
-        this.calle = calle;
-    }
-
-    public String getCodigoPostal() {
-        return codigo_postal;
-    }
-
-    public void setCodigoPostal(String codigoPostal) {
-        this.codigo_postal = codigoPostal;
-    }
-
     public String getMunicipio() {
         return municipio;
-    }
-
-    public void setMunicipio(String municipio) {
-        this.municipio = municipio;
     }
 
     public String getCodigo_postal() {
         return codigo_postal;
     }
 
-    public void setCodigo_postal(String codigo_postal) {
-        this.codigo_postal = codigo_postal;
-    }
-
     public String getRegimen_tenencia() {
         return regimen_tenencia;
-    }
-
-    public void setRegimen_tenencia(String regimen_tenencia) {
-        this.regimen_tenencia = regimen_tenencia;
     }
 
     public String getMetros_cuadrados() {
         return metros_cuadrados;
     }
 
-    public void setMetros_cuadrados(String metros_cuadrados) {
-        this.metros_cuadrados = metros_cuadrados;
-    }
-
     public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-    
-
     public String getCondiciones() {
         return condiciones;
-    }
-
-    public void setCondiciones(String condiciones) {
-        this.condiciones = condiciones;
     }
 
     public Expediente getPropietario() {
         return propietario;
     }
 
-    public void setPropietario(Expediente propietario) {
-        this.propietario = propietario;
-    }
-
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Expediente getExpediente_residencia() {
         return expediente_residencia;
+    }
+    
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
+    public void setCodigo_postal(String codigo_postal) {
+        this.codigo_postal = codigo_postal;
+    }
+
+    public void setRegimen_tenencia(String regimen_tenencia) {
+        this.regimen_tenencia = regimen_tenencia;
+    }
+
+    public void setMetros_cuadrados(String metros_cuadrados) {
+        this.metros_cuadrados = metros_cuadrados;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+    
+    public void setCondiciones(String condiciones) {
+        this.condiciones = condiciones;
+    }
+
+    public void setPropietario(Expediente propietario) {
+        this.propietario = propietario;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setExpediente_residencia(Expediente expediente_residencia) {

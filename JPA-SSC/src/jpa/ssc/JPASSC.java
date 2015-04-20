@@ -24,11 +24,10 @@ public class JPASSC {
         EntityManagerFactory emf;
         EntityManager em;
         emf = Persistence.createEntityManagerFactory("JPA-SSCPU");
-        em=emf.createEntityManager();
+        em = emf.createEntityManager();
         //ADD TODO HERE
         
         em.close();
-        
               
     }
     

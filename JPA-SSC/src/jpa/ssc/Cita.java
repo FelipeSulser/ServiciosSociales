@@ -30,91 +30,85 @@ public class Cita implements Serializable {
     
     @Column(nullable=false)
     private Date fecha;
-    
-    
+   
     private String comentarios;
 
     @Column(nullable=false)
     private String tipo_de_cita;
-
-    
     
     @ManyToOne
     @JoinColumn(nullable=false)
     private Ciudadano ciudadano;
 
-    
     @ManyToOne
     @JoinColumn(nullable=false)
     private Profesional profesional;
     
     @OneToMany(mappedBy="id_cita", orphanRemoval=true)
     private List<Intervenciones> intervenciones;
-
-    
     
     public Cita(){
         
     }
     
-    public Ciudadano getCiudadano() {
-        return ciudadano;
-    }
-
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
     
-    public void setCiudadano(Ciudadano ciudadano) {
-        this.ciudadano = ciudadano;
+    public Ciudadano getCiudadano() {
+        return ciudadano;
     }
-
+    
     public Profesional getProfesional() {
         return profesional;
-    }
-
-    public void setProfesional(Profesional profesional) {
-        this.profesional = profesional;
     }
     
     public Date getFecha() {
         return fecha;
     }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
     
     public String getComentarios() {
         return comentarios;
-    }
-
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
     }
     
     public String getTipo_de_cita() {
         return tipo_de_cita;
     }
-
-    public void setTipo_de_cita(String tipo_de_cita) {
-        this.tipo_de_cita = tipo_de_cita;
-    }    
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
     
     public List<Intervenciones> getIntervenciones() {
         return intervenciones;
     }
+    
+    public Long getId() {
+        return id;
+    }
+    
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano = ciudadano;
+    }
+    
+    public void setProfesional(Profesional profesional) {
+        this.profesional = profesional;
+    }
+    
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+    
+    public void setTipo_de_cita(String tipo_de_cita) {
+        this.tipo_de_cita = tipo_de_cita;
+    }
 
     public void setIntervenciones(List<Intervenciones> intervenciones) {
         this.intervenciones = intervenciones;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

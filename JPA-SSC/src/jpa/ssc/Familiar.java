@@ -42,22 +42,19 @@ public class Familiar implements Serializable {
     @ManyToOne
     @JoinColumn(nullable=false)
     private Expediente expediente_fam;
-
-    public String getMu() {
-        return mu;
-    }
-
-    public void setMu(String mu) {
-        this.mu = mu;
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
     
     public Familiar(){
         
     }
+    
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getMu() {
+        return mu;
+    }
+    
     public String getDni() {
         return dni;
     }
@@ -66,73 +63,70 @@ public class Familiar implements Serializable {
         return expediente_fam;
     }
 
-    public void setExpediente_fam(Expediente expediente_fam) {
-        this.expediente_fam = expediente_fam;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getApellido1() {
         return apellido1;
     }
 
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
-    }
-
     public String getApellido2() {
         return apellido2;
-    }
-
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
     }
 
     public String getParentesco() {
         return parentesco;
     }
 
-    public void setParentesco(String parentesco) {
-        this.parentesco = parentesco;
-    }
-
     public Date getFecha_nacimiento() {
         return fecha_nacimiento;
-    }
-
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public double getIngreso_medio() {
         return ingreso_medio;
     }
 
-    public void setIngreso_medio(double ingreso_medio) {
-        this.ingreso_medio = ingreso_medio;
-    }
-
-    public Expediente getExpediente() {
-        return expediente_fam;
-    }
-
-    public void setExpediente(Expediente expediente) {
-        this.expediente_fam = expediente;
-    }
-    
     public Long getId() {
         return id;
     }
+    
+    public void setMu(String mu) {
+        this.mu = mu;
+    }
+    
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setExpediente_fam(Expediente expediente_fam) {
+        this.expediente_fam = expediente_fam;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
+    }
+    
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public void setParentesco(String parentesco) {
+        this.parentesco = parentesco;
+    }
+
+    public void setFecha_nacimiento(Date fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+
+    public void setIngreso_medio(double ingreso_medio) {
+        this.ingreso_medio = ingreso_medio;
+    }
+    
 
     public void setId(Long id) {
         this.id = id;
